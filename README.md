@@ -1,3 +1,3 @@
-#mastermind-game
+# mastermind-game
 
 Readme in progress
