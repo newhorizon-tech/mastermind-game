@@ -1,18 +1,26 @@
 #!/usr/bin/env ruby
 
-def color_input
-  colors = []
-  puts 'Enter Color 1:'
-  colors[0] = gets.chomp
-  puts 'Enter Color 2:'
-  colors[1] = gets.chomp
-  puts 'Enter Color 3:'
-  colors[2] = gets.chomp
-  puts 'Enter Color 4:'
-  colors[3] = gets.chomp
-  colors
+correct_combo = %w[1 2 3 4 5]
+
+def num_input
+  print 'Enter your guess: '
+  num = gets.chomp
+  num.split('')
 end
 
-turn = color_input
+puts "Rules. \n 1. The number should have 5 digits. \n 2. You can't repeat digits \n"
+puts '-' * 40
 
-puts "Turn 1: #{turn}"
+win = false
+10.times do
+  turn = num_input
+  if turn.eql? correct_combo
+    win = true
+    puts 'You have lost the game!'
+    break
+  else
+    puts 'Incorrect'
+  end
+end
+
+puts 'You have lost the game!' unless win
