@@ -11,7 +11,7 @@ end
 puts "Rules \n 1. The number should have 5 digits. \n 2. You can't repeat digits \n"
 
 test = Mastermind.new
-puts "The correct answer is #{test.comb_int}"
+
 win = false
 correct_digits = 0 # Correct digits at correct position
 correct_position = 0 # Correct digits at incorrect positon
@@ -40,5 +40,5 @@ puts '-' * 40
 
 unless win
   puts 'You have lost the game!'
-  puts "The correct answer was #{test.comb_int}"
+  puts "The correct answer was #{test.combo_int}"
 end

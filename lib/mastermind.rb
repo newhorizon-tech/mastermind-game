@@ -15,13 +15,8 @@ class Mastermind
 
   def check_digit(arg)
     digits = 0
-    arg.each do |digit|
-      @correct_combo.each do |combo_digit|
-        if digit.eql? combo_digit
-          digits += 1
-          next
-        end
-      end
+    @correct_combo.each do |combo_digit|
+      digits += 1 if arg.any? { |digit| digit.eql? combo_digit }
     end
     digits
   end
@@ -30,7 +25,10 @@ class Mastermind
     position = 0
     arg.each_with_index do |digit, digit_index|
       @correct_combo.each_with_index do |combo_digit, combo_digit_index|
-        position += 1 if digit.eql? combo_digit and digit_index.eql? combo_digit_index
+        if digit.eql? combo_digit and digit_index.eql? combo_digit_index
+          position += 1
+          next
+        end
       end
     end
     position
