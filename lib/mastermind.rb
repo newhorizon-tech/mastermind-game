@@ -1,6 +1,16 @@
 class Mastermind
-  def initialize(num)
-    @correct_combo = num
+  def initialize()
+    random_combo_generator
+  end
+
+  def random_combo_generator()
+    arr = (0..9).to_a.shuffle
+    @correct_combo = arr[0, 5]
+    # puts "Random number is #{@correct_combo}"
+  end
+
+  def turn_correct(arg)
+    arg.eql? @correct_combo
   end
 
   def check_digit(arg)
@@ -24,5 +34,12 @@ class Mastermind
       end
     end
     position
+  end
+
+  def combo_int
+    num = 0
+    rev_combo = @correct_combo.reverse
+    rev_combo.each_with_index { |value, key| num += (value * 10**key) }
+    num
   end
 end
