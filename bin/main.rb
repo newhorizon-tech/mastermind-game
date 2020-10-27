@@ -8,7 +8,7 @@ def num_input
   num.split('').map(&:to_i)
 end
 
-puts "Rules \n 1. The number should have 5 digits. \n 2. You can't repeat digits \n"
+puts "Rules \n 1. The number should have 4 digits. \n 2. You can't repeat digits \n"
 
 test = Mastermind.new
 

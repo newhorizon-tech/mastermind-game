@@ -5,7 +5,7 @@ class Mastermind
 
   def random_combo_generator()
     arr = (0..9).to_a.shuffle
-    @correct_combo = arr[0, 5]
+    @correct_combo = arr[0, 4]
     # puts "Random number is #{@correct_combo}"
   end
 
