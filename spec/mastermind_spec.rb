@@ -1,3 +1,4 @@
+require 'rspec'
 require_relative '../lib/mastermind.rb'
 
 describe Mastermind do
