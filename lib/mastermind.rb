@@ -1,12 +1,16 @@
 class Mastermind
-  def initialize()
-    random_combo_generator
+  def initialize(arg = nil)
+    @correct_combo = if arg.nil?
+                       random_combo_generator
+                     else
+                       arg
+                     end
   end
 
   def random_combo_generator()
     arr = (0..9).to_a.shuffle
-    @correct_combo = arr[0, 4]
-    # puts "Random number is #{@correct_combo}"
+    combo = arr[0, 4]
+    combo
   end
 
   def turn_correct(arg)
